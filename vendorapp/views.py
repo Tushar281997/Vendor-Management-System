@@ -83,7 +83,7 @@ class DeliveredPurchaseOrderAPIView(APIView):
         except Exception as e:
             return Response({"error": f"{e}"}, status=status.HTTP_404_NOT_FOUND)
 
-        # Recalculate average_response_time
+        # Recalculate performance metrics
         vendor_id = po.vendor_id
         vendor = Vendor.objects.get(pk=vendor_id)
 
